@@ -10,7 +10,6 @@
     "start": "node dist/server.js",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "crud:example": "tsx src/crud-example.ts"
   },
   "keywords": [],
   "author": "",
