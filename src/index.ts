@@ -5,6 +5,7 @@ import cors from 'cors';
 console.log('🔥 BACKEND FILE LOADED');
 
 import subjectsRouter from "./routes/subjects";
+import securityMiddleware from "./middleware/security";
 
 const app = express();
 const PORT = 8000;
@@ -26,6 +27,8 @@ app.options("*", cors(), (_req, res) => {
 });
 
 app.use(express.json());
+
+app.use(securityMiddleware);
 
 app.use('/api/subjects', subjectsRouter);
 
