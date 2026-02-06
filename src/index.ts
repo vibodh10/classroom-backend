@@ -1,11 +1,13 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import {toNodeHandler} from "better-auth/node"
 
 console.log('🔥 BACKEND FILE LOADED');
 
 import subjectsRouter from "./routes/subjects";
 import securityMiddleware from "./middleware/security";
+import {auth} from "./lib/auth";
 
 const app = express();
 const PORT = 8000;
@@ -25,6 +27,8 @@ app.use(cors({
 app.options("*", cors(), (_req, res) => {
   res.sendStatus(204);
 });
+
+app.all('/api/auth/*', toNodeHandler(auth));
 
 app.use(express.json());
 
