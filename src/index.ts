@@ -10,7 +10,7 @@ console.log('🔥 BACKEND FILE LOADED');
 
 import subjectsRouter from "./routes/subjects.js";
 import securityMiddleware from "./middleware/security.js";
-import {auth} from "./lib/auth";
+import {auth} from "./lib/auth.js";
 
 const app = express();
 const PORT = 8000;
