@@ -8,8 +8,8 @@ import {toNodeHandler} from "better-auth/node"
 
 console.log('🔥 BACKEND FILE LOADED');
 
-import subjectsRouter from "./routes/subjects";
-import securityMiddleware from "./middleware/security";
+import subjectsRouter from "./routes/subjects.js";
+import securityMiddleware from "./middleware/security.js";
 import {auth} from "./lib/auth";
 
 const app = express();
