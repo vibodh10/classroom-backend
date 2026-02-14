@@ -5,10 +5,12 @@ import { db } from "../db/index.js";
 import { user } from "../db/schema/index.js";
 
 const router = express.Router();
+console.log("🔥 USERS ROUTER LOADED");
 
 // Get all users with optional search, role filter, and pagination
 router.get("/", async (req, res) => {
     try {
+        console.log("🔥 USERS LIST HIT");
         const { search, role, page = 1, limit = 10 } = req.query;
 
         const currentPage = Math.max(1, +page);
