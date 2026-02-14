@@ -7,6 +7,7 @@ import {
     eq,
     getTableColumns,
     ilike,
+    SQL,
     sql,
 } from "drizzle-orm";
 
@@ -16,7 +17,7 @@ const router = express.Router();
  * Helper to parse Refine filter query params
  */
 const parseRefineFilters = (query: any) => {
-    const conditions = [];
+    const conditions: SQL[] = [];
 
     // Refine sends filters like:
     // filters[0][field]
