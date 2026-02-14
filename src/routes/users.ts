@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
         }
 
         if (role) {
-            filterConditions.push(eq(user.role, role));
+            filterConditions.push(eq(user.role, role as UserRoles));
         }
 
         const whereClause =
