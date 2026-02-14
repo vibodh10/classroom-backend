@@ -28,7 +28,7 @@ const parseRefineFilters = (query: any) => {
 
     Object.keys(query).forEach((key) => {
         const match = key.match(/^filters\[(\d+)]\[field]$/);
-        if (match) {
+        if (match && match[1]) {
             filterIndexes.add(match[1]);
         }
     });
